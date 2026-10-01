@@ -1,0 +1,32 @@
+services:
+    sp_boot_app:
+        container_name: my-sboot-app-container
+        build: .
+        ports:
+            - "8080:8080"
+        environment:
+            SPRING_DATASOURCE_URL: ${URL}
+            SPRING_DATASOURCE_USERNAME: ${USERNAME}
+            SPRING_DATASOURCE_PASSWORD: ${PASSWORD}
+        depends_on:
+            db:
+                condition: service_healthy
+
+    db:
+        image: mysql
+        restart: always
+        volumes:
+            - db_data:/var/lib/mysql
+        ports:
+            - "3307:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: ${PASSWORD}
+            MYSQL_DATABASE: ${DB_NAME}
+        healthcheck:
+            test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+            interval: 10s
+            timeout: 5s
+            retries: 5
+
+volumes:
+    db_data:

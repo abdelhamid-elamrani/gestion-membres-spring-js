@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mon Gym</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <!-- Header commun -->
+    <header>
+        <h1>Mon Application Gym</h1>
+        <nav>
+            <!-- Menu de navigation -->
+        </nav>
+    </header>
+
+    <!-- C'est ICI que le contenu spécifique de chaque page va s'insérer -->
+    <div th:replace="${content}"></div>
+
+    <!-- Footer commun -->
+    <footer>
+        <p>© 2026 Mon Gym</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Gestion Gym - Admin</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>
+                <button id="btnLogout">Se déconnecter</button>
+            </li>
+            <li>
+                <span>bienvenue <span id="namee"></span></span>
+            </li>
+        </ul>
+    </nav>
+
+    <h2> Tableau de bord administrateur </h2>
+
+    <div id="message" style="display: none;"></div>
+
+
+    <button id="btnCreate"> Créer un nouveau membre </button>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th> ID </th>
+                <th> Prénom </th>
+                <th> Nom </th>
+                <th> Email </th>
+                <th> Téléphone </th>
+                <th> Rôle </th>
+                <th> Actions </th>
+            </tr>
+        </thead>
+        <tbody id="membersTableBody">
+            <!-- Les membres seront ajoutés ici dynamiquement -->
+        </tbody>
+
+    </table>
+
+    <script src="./js/api.js"></script>
+    <script src="./js/admin.js"></script>
+
+</body>
+
+</html>

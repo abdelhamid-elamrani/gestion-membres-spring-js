@@ -1,0 +1,296 @@
+/* =========================
+   RESET / GLOBAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+    color: #222;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+    color: #1f2937;
+}
+
+h2 {
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+    background: #1f2937;
+    padding: 0 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    min-height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 25px;
+
+    list-style: none;
+}
+
+nav li {
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 14px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+nav span {
+    color: white;
+    font-weight: 500;
+}
+
+
+/* =========================
+   FORMULAIRES
+========================= */
+
+form {
+    width: min(450px, 90%);
+    margin: 40px auto;
+    padding: 30px;
+
+    background: white;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+form h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+
+    font-weight: 600;
+    color: #374151;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 11px 12px;
+    margin-bottom: 18px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+
+    font-size: 15px;
+    background: white;
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+input:disabled {
+    background: #f3f4f6;
+    color: #6b7280;
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   BOUTONS
+========================= */
+
+button {
+    padding: 10px 18px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #2563eb;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+form button[type="submit"] {
+    width: 100%;
+    margin-top: 5px;
+}
+
+#btnLogout {
+    background: #dc2626;
+}
+
+#btnLogout:hover {
+    background: #b91c1c;
+}
+
+.btnSupprimer {
+    background: #dc2626;
+}
+
+.btnSupprimer:hover {
+    background: #b91c1c;
+}
+
+#btnCancel {
+    background: #6b7280;
+    margin-top: 10px;
+}
+
+#btnCancel:hover {
+    background: #4b5563;
+}
+
+
+/* =========================
+   BOUTONS DASHBOARD
+========================= */
+
+#btnCreate,
+#editProf,
+#editPass {
+    display: block;
+    width: min(300px, 90%);
+    margin: 15px auto;
+}
+
+
+/* =========================
+   TABLEAUX
+========================= */
+
+table {
+    width: min(1100px, 95%);
+    margin: 30px auto;
+
+    border-collapse: collapse;
+
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+thead {
+    background: #1f2937;
+    color: white;
+}
+
+th,
+td {
+    padding: 14px 16px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+}
+
+tbody tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+tbody tr:hover {
+    background: #eff6ff;
+}
+
+
+/* =========================
+   MESSAGES / ERREURS
+========================= */
+
+#error,
+#message,
+#msg {
+    width: min(450px, 90%);
+    margin: 15px auto;
+    padding: 12px 15px;
+
+    text-align: center;
+
+    border-radius: 7px;
+    background: #fee2e2;
+    color: #b91c1c;
+
+    font-weight: 500;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    nav {
+        padding: 0 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 0;
+    }
+
+    form {
+        padding: 22px;
+        margin-top: 25px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+}

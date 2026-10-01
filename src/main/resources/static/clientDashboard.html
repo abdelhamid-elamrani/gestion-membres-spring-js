@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <button id="btnLogout">Se déconnecter</button>
+            </li>
+            <li>
+                <span>bienvenue <span id="namee"></span></span>
+            </li>
+        </ul>
+    </nav>
+
+    <h2>Tableu de bord client !</h2>
+
+    <div id="msg" style="display: none; color:red"></div>
+
+    <table border="1">
+        <th>
+            <tr>Prénom</tr>
+            <tr>Nom</tr>
+            <tr>Email</tr>
+            <tr>Téléphone</tr>
+        </th>
+
+        <tbody id="tbody">
+
+        </tbody>
+
+    </table>
+
+    <button id="editProf"> Modifier mon profil </button>
+    <button id="editPass">changer mon mot de passe</button>
+
+
+    <script src="./js/api.js"></script>
+    <script src="./js/client.js"></script>
+
+</body>
+
+</html>
