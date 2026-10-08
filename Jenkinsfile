@@ -38,7 +38,7 @@ pipeline{
 
         stage('Docker Build'){
             steps{
-                sh 'docker build -t gest-membres-spboot-js .'
+                sh 'docker build -t elamrani7/gest-membres-spboot-js:latest .'
             }
             post{
                 success {
@@ -47,6 +47,20 @@ pipeline{
             }
         }
 
+        stage('Docker Push'){
+            steps{
+                    withCredentials([
+                        usernamePassword(
+                            credentialsId: 'dockerhub-creds',
+                            usernameVariable: 'DOCKER_USER',
+                            passwordVariable: 'DOCKER_TOKEN'
+                        )
+                    ]) {
+                        sh 'printf "%s" "$DOCKER_TOKEN" | docker login -u "$DOCKER_USER" --password-stdin'
+                        sh 'docker push elamrani7/gest-membres-spboot-js:latest'
+                    }
+            }
+        }
     }
 
 }
