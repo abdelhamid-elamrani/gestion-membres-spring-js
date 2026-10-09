@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    environment {
+        EC2_IP = '98.93.127.218'
+    }
     stages{
         stage('Fetch code'){
             steps{
@@ -61,6 +64,22 @@ pipeline{
                     }
             }
         }
-    }
 
+        stage('Deploy') {
+            steps {
+                withCredentials([
+                    sshUserPrivateKey(
+                        credentialsId: 'ec2-ssh-key',
+                        keyFileVariable: 'SSH_KEY',
+                        usernameVariable: 'SSH_USER'
+                    )
+                ]) {
+                    sh 'ssh  -o StrictHostKeyChecking=no -i "$SSH_KEY" "$SSH_USER"@"$EC2_IP" "cd ~/gestion-membres && docker compose pull && docker compose up -d"'
+                }
+            }
+        }
+
+        
+
+}
 }
